@@ -18,16 +18,21 @@ Resources:
             Ref: BookTable
       Policies: AmazonDynamoDBFullAccess
       Events:
+        #api to add a new book
         AddBook:
           Type: Api
           Properties:
             Path: /books
             Method: post
+
+        #api to get all books
         ListBooks:
           Type: Api
           Properties:
             Path: /books
             Method: get
+
+        #api to update, delete a book
         Book:
           Type: Api
           Properties:
